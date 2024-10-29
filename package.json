@@ -1,0 +1,14 @@
+{
+  "name": "training",
+  "version": "1.0.0",
+  "description": "my first try of local scss",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass ./sass/main.scss ./app.css -w"
+  },
+  "author": "Ras",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}

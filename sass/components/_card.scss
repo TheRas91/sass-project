@@ -1,0 +1,179 @@
+.card {
+  perspective: 100rem;
+  position: relative;
+  height: 52rem;
+  transition: all 0.5s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &__side {
+    width: 100%;
+    height: 52rem;
+    transition: all 0.5s ease-in;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden; // Prevents showing the back when flipped
+    transform-style: preserve-3d; // Ensures 3D transformation is applied
+    overflow: hidden;
+    border-radius: 0.5rem;
+
+    &--front {
+      background-color: $color-white;
+    }
+    &--back {
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+  &:hover &__side--back {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+
+  &__picture {
+    background-size: cover;
+    background-blend-mode: luminosity;
+    height: 23rem;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-radius: 3px;
+
+    &--1 {
+      background-image: url("../../images/p1.jpg"),
+        linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+    }
+    &--2 {
+      background-image: url(../../images/p2.jpg),
+        linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
+    }
+    &--3 {
+      background-image: url(../../images/p3.jpg),
+        linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+    }
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $color-white;
+    position: absolute;
+    text-align: right;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+  }
+
+  &__heading-span {
+    -webkit-box-decoration-break: clone; //worked for safari!
+    padding: 1rem 1.5rem;
+    box-decoration-break: clone;
+    border-radius: 0.5rem;
+
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.85),
+        rgba($color-secondary-dark, 0.85)
+      );
+    }
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.85),
+        rgba($color-primary-dark, 0.85)
+      );
+    }
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.85),
+        rgba($color-tertiary-dark, 0.85)
+      );
+    }
+  }
+
+  &-details {
+    padding: 3rem;
+    ul {
+      margin: 0 auto;
+      list-style: none;
+      width: 80%;
+
+      li {
+        text-align: center;
+        font-size: 1.6rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-1;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+  }
+  &__price-box {
+    text-align: center;
+    color: $color-white;
+    margin-bottom: 8rem;
+  }
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+  }
+}
+.row:hover .card:not(:hover) {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
