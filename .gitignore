@@ -1,0 +1,15 @@
+# Ignore all .log files
+*.log
+
+# Ignore node_modules directory (for Node.js projects)
+node_modules/
+
+# Ignore environment files with sensitive information
+.env
+
+# Ignore build directories (for frontend projects)
+/dist/
+/build/
+
+# Ignore macOS system files
+.DS_Store
