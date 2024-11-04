@@ -1,6 +1,6 @@
 ---
 
-< learning sass is incredible! >
+< learning sass is exciting! >
 
 ---
 
