@@ -4,7 +4,8 @@
   "description": "my first try of local scss",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass ./sass/main.scss ./app.css -w "
+    "compile:sass": "node-sass ./sass/main.scss ./app.css -w ",
+    "mytree": "tree -l 3 --ignore 'node_modules' "
   },
   "author": "Ras",
   "license": "ISC",

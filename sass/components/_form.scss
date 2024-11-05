@@ -1,0 +1,51 @@
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 0.3rem;
+    background-color: rgba($color: $color-white, $alpha: 0.7);
+    border: none;
+    border-bottom: 0.3rem solid transparent; //used border of :hover here too, because of prevent moving  the element in y axis (delicate wow)
+    width: 90%;
+    display: block;
+  }
+
+  &__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba($color-black, $alpha: 0.1);
+    border-bottom: 0.3rem solid $color-primary;
+    //selector of 'placeholder' on 'focused element'
+    // &::-webkit-input-placeholder {
+    //   color: $color-primary;
+    // }
+  }
+
+  &__input:focus:invalid {
+    border-bottom: 0.3rem solid $color-secondary-dark;
+  }
+
+  &__input::-webkit-input-placeholder {
+    color: #999;
+  }
+
+  &__label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+    display: block;
+    transition: all 0.5s; //for opacity and transformY below
+  }
+
+  &__input:placeholder-shown + &__label {
+    visibility: hidden; //can not be animated so we will use op
+    opacity: 0;
+    transform: translateY(-4rem);
+  }
+}
