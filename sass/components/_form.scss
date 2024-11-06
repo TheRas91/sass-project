@@ -55,6 +55,9 @@
     width: 50%;
     display: inline;
     margin-bottom: 1rem;
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
   }
 
   &__radio-label {
