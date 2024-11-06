@@ -14,6 +14,7 @@
     border-bottom: 0.3rem solid transparent; //used border of :hover here too, because of prevent moving  the element in y axis (delicate wow)
     width: 90%;
     display: block;
+    transition: all 0.3s;
   }
 
   &__input:focus {
@@ -35,17 +36,65 @@
   }
 
   &__label {
+    color: $color-black;
     font-size: 1.5rem;
     font-weight: 700;
     margin-left: 2rem;
     margin-top: 0.5rem;
     display: block;
-    transition: all 0.5s; //for opacity and transformY below
+    transition: all 0.3s; //for opacity and transformY below
   }
 
   &__input:placeholder-shown + &__label {
     visibility: hidden; //can not be animated so we will use op
     opacity: 0;
     transform: translateY(-4rem);
+  }
+
+  &__radio-group {
+    width: 50%;
+    display: inline;
+    margin-bottom: 1rem;
+  }
+
+  &__radio-label {
+    font-size: $default-font-size;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4rem;
+  }
+
+  &__radio-button {
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    border: 0.4rem solid $color-primary;
+    border-radius: 50%;
+    position: absolute;
+    top: -0.5 rem;
+    left: 0;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1.3rem;
+      width: 1.3rem;
+      background-color: $color-primary;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+  }
+
+  &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    opacity: 1;
+  }
+
+  &__radio-input {
+    display: none;
   }
 }
