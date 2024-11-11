@@ -49,6 +49,7 @@
     text-align: center;
     list-style: none;
     width: 100%;
+    display: none;
   }
 
   &__item {
@@ -142,5 +143,8 @@
   &__checkbox:checked + &__button &__icon::after {
     top: 0;
     transform: rotate(-45deg);
+  }
+  &__checkbox:checked ~ &__nav &__list {
+    display: inline-block;
   }
 }
