@@ -44,8 +44,13 @@
     </div>
 
     <header class="header">
+      <!-- responsive images that respond based on resolution -->
       <div class="header__logo-box">
-        <img src="./images/reactlogo.svg" alt="logo" class="header__logo" />
+        <img
+          srcset="./images/reactlogo.svg 1x, ./images/Ras.png 2x"
+          alt="logo"
+          class="header__logo"
+        />
       </div>
       <div class="header__text-box">
         <h1 class="heading-primary">
@@ -414,6 +419,20 @@
           </p>
         </div>
       </div>
+
+      <!-- responsive images,'sass.jpg' on query width or 'css.jpg' in screen more
+      than query set -->
+      <h2 class="heading-secondary u-margin-bottom-big">
+        An example of responsive images:
+      </h2>
+      <picture style="display: block">
+        <source
+          media="(max-width:37.5em)"
+          srcset="./images/sass.jpg"
+          style="width: 30%"
+        />
+        <img src="./images/css.jpg" alt="" style="width: 30%" />
+      </picture>
     </footer>
 
     <div class="popup" id="popup">

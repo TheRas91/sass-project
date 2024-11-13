@@ -5,8 +5,8 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: rgba($color: $color-black, $alpha: 0.75);
-
+  background-color: rgba($color: $color-black, $alpha: 0.6);
+  backdrop-filter: blur(0.3rem);
   opacity: 0;
   visibility: hidden;
   //   display: none;
