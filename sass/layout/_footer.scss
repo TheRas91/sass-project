@@ -6,12 +6,15 @@
   text-align: center;
 
   @include respond(tab-port) {
-    padding: 8rem 0;
+    padding: 5rem 0;
   }
 
   &__logo-box {
     text-align: center;
     margin-bottom: 8rem;
+    @include respond(tab-port) {
+      margin-bottom: 4rem;
+    }
   }
 
   &__logo {
@@ -29,6 +32,9 @@
     border-top: 1px solid $color-grey-dark;
     padding-top: 2rem;
     display: inline-block;
+    @include respond(tab-port) {
+      font-size: 2rem;
+    }
   }
 
   &__copy {
@@ -70,5 +76,8 @@
     border-top: 1px solid $color-grey-dark;
     padding-top: 2rem;
     float: right;
+    @include respond(tab-port) {
+      font-size: 2rem;
+    }
   }
 }

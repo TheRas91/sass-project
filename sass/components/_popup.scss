@@ -31,6 +31,10 @@
     visibility: hidden;
     transform: translate(-50%, -50%) scale(0);
     transition: all 0.3s 0.1 s;
+    @include respond(tab-land) {
+      display: block;
+      width: 70%;
+    }
   }
 
   &:target &__content {
@@ -42,6 +46,13 @@
   &__left {
     width: 33.333333%;
     display: table-cell;
+    @include respond(tab-land) {
+      display: block;
+      margin: 0 auto;
+      width: 90%;
+      text-align: center;
+      padding: 1rem;
+    }
   }
 
   &__right {
@@ -49,12 +60,22 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+    @include respond(tab-land) {
+      text-align: center;
+    }
   }
 
   &__img {
     display: block;
     width: 100%;
     margin: 0;
+    @include respond(tab-land) {
+      width: 40%;
+      display: inline;
+      border-radius: 3rem;
+      padding: 1rem auto;
+      margin: 0 1rem;
+    }
   }
 
   &__text {

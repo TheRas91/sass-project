@@ -1,5 +1,6 @@
 .composition {
   position: relative;
+
   &__photo {
     width: 55%;
     box-shadow: 0 1.5rem 4rem rgba($color-black, $alpha: 0.4);
@@ -9,17 +10,42 @@
     transform-style: preserve-3d; // Ensures 3D transformation is applied
     transition: all 0.2s;
 
+    @include respond(tab-port) {
+      width: 33.33333%;
+      float: left;
+      position: relative;
+      margin-top: 3rem;
+    }
+
     &--p1 {
       left: 0;
-      top: -2rem;
+      top: 0;
+      @include respond(tab-port) {
+        position: absolute;
+        top: 3rem;
+        left: 0;
+        transform: scale(1.4);
+      }
     }
     &--p2 {
       right: 2rem;
       top: 2rem;
+      @include respond(tab-port) {
+        position: absolute;
+        top: 3rem;
+        right: 0;
+        transform: scale(1.4);
+      }
     }
     &--p3 {
       left: 15%;
       top: 8rem;
+      @include respond(tab-port) {
+        position: absolute;
+        top: -1rem;
+        left: 30%;
+        transform: scale(1.4);
+      }
     }
     &:hover {
       transform: scale(1.1);
@@ -28,10 +54,16 @@
       padding: 0.6rem;
       box-shadow: 0 1.5rem 4rem rgba($color-primary-dark, $alpha: 0.5);
       background-color: rgba($color-black, $alpha: 0.4);
+      @include respond(tab-port) {
+        transform: scale(1.7);
+      }
     }
   }
   &:hover &__photo:not(:hover) {
     transform: scale(0.9);
+    @include respond(tab-port) {
+      transform: scale(1.4);
+    }
   }
 }
 //.composition:hover .composition__photo:not(:hover) {
